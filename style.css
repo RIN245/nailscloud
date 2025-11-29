@@ -7,10 +7,10 @@
 }
 
 body {
-  background: rgba(255, 228, 225); /* soft pink background - fixed syntax */
+  background: rgba(255, 228, 225);
 }
 
-/* Google Fonts import - moved to top */
+/* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600&display=swap');
 
 /* ======= HEADER ======= */
@@ -19,8 +19,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: rgba(192, 128, 129); /* Mauvelous soft mauve - fixed syntax */
-  box-shadow: 0 4px 10px rgba(192, 128, 129, 0.5); /* added alpha value */
+  background: rgba(192, 128, 129);
+  box-shadow: 0 4px 10px rgba(192, 128, 129, 0.5);
 }
 
 /* Left and Right nav menus */
@@ -59,27 +59,72 @@ header nav ul li a:hover {
 }
 
 .logo h1 {
-  font-family: 'Playfair Display', serif; /* fixed font declaration */
+  font-family: 'Playfair Display', serif;
   font-size: 50px;
   font-weight: 700;
-  color: rgba(255, 228, 225); /* fixed syntax */
+  color: rgba(255, 228, 225);
   margin: 0;
 }
 
-/* Responsive */
+/* ======= MOBILE RESPONSIVE HEADER ======= */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-left, .nav-right {
+    width: 100%;
+  }
+
+  .nav-left ul, .nav-right ul {
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
   }
 
-  .logo h1 {
-    font-size: 24px;
+  .nav-left ul li a, .nav-right ul li a {
+    padding: 8px 15px;
+    font-size: 14px;
   }
 
-  header nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
+  .logo {
+    order: -1;
+  }
+
+  .logo h1 {
+    font-size: 36px;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .nav-left ul, .nav-right ul {
+    gap: 8px;
+  }
+
+  .nav-left ul li a, .nav-right ul li a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .logo h1 {
+    font-size: 28px;
+  }
+
+  .logo img {
+    width: 45px;
   }
 }
 
@@ -92,7 +137,7 @@ header nav ul li a:hover {
   text-align: center;
   height: 95vh;
   padding: 0 20px;
-  font-family: 'Georgia', serif; /* fixed font declaration */
+  font-family: 'Georgia', serif;
   background: linear-gradient(135deg, #ffe4e1, #ffd6d6, #ffe4f0);
   overflow: hidden;
 }
@@ -116,100 +161,6 @@ header nav ul li a:hover {
 }
 
 .hero-content h1 {
-  font-family: 'Georgia', serif; /* fixed font declaration */
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #9e3952;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 35px;
-  line-height: 1.5;
-  color: #330014;
-}
-/* HERO SECTION */
-#hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, #ffe4ec, #ffd1dc, #ffc0cb);
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #fff0f5, #ffc0cb 80%);
-  z-index: 0;
-}
-
-/* Floating image */
-.hero-img {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 150px; /* change size if needed */
-  opacity: 0.7;
-  transform: translate(-50%, 0);
-  transition: transform 0.2s ease-out;
-  z-index: 1;
-}
-/* ===== HERO SECTION WITH SOFT NAIL BACKGROUND ===== */
-#hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 95vh;
-  padding: 0 20px;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #ffe4e1, #ffd6d6, #ffe4f0);
-  overflow: hidden;
-}
-
-/* Soft nail pattern background with parallax */
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  background-image: url('/imh.jpg');
-  background-size: 400px auto;
-  background-repeat: repeat;
-  opacity: 0.15;
-  background-position: center;
-  z-index: 0;
-  background-attachment: fixed; /* This creates the parallax effect */
-}
-
-/* Overlay to soften the pattern */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  z-index: 1;
-  backdrop-filter: blur(1px);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 700px;
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-.hero-content h1 {
   font-family: 'Georgia', serif;
   font-size: 48px;
   margin-bottom: 20px;
@@ -221,52 +172,6 @@ header nav ul li a:hover {
   margin-bottom: 35px;
   line-height: 1.5;
   color: #330014;
-}
-
-.hero-image {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  width: 350px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-  animation: fadeIn 2s ease forwards;
-}
-
-/* Rest of your existing hero styles... */
-/* Hero content */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-}
-
-.hero-content h1 {
-  font-family: 'Caviar Dreams', sans-serif;
-  font-size: 60px;
-  color: #9e3952;
-}
-
-.hero-content p {
-  font-size: 20px;
-  color: #330014;
-  margin-bottom: 30px;
-}
-
-.hero-btn {
-  padding: 15px 35px;
-  background: #330014;
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.hero-btn:hover {
-  background: #cc0033;
-  transform: scale(1.1);
 }
 
 /* Hero buttons */
@@ -284,7 +189,7 @@ header nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-/* Primary button: bright & solid */
+/* Primary button */
 .btn-primary {
   background: #cc0033;
   color: #fff;
@@ -297,20 +202,11 @@ header nav ul li a:hover {
   box-shadow: 0 8px 20px rgba(204, 0, 51, 0.6);
 }
 
-/* Secondary button: soft border style */
+/* Secondary button */
 .btn-secondary {
   background: transparent;
   border: 2px solid #cc0033;
   color: #cc0033;
-}
-.about-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('/imh.jpg') repeat;
-  opacity: 0.1;
-  z-index: 0;
-  pointer-events: none;
 }
 
 .btn-secondary:hover {
@@ -318,12 +214,7 @@ header nav ul li a:hover {
   color: #fff;
   transform: scale(1.1);
 }
-.hero-background {
-  background-image: url('/imh.jpg');
-  background-size: 300px auto;
-  opacity: 0.12;
-  background-attachment: fixed;
-}
+
 /* Hero image */
 .hero-image {
   position: absolute;
@@ -332,7 +223,7 @@ header nav ul li a:hover {
   width: 350px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  z-index: 2;
   animation: fadeIn 2s ease forwards;
 }
 
@@ -352,6 +243,55 @@ header nav ul li a:hover {
 .sparkle2 { top: 40%; left: 60%; animation-delay: 1.5s; }
 .sparkle3 { top: 70%; left: 30%; animation-delay: 3s; }
 
+/* ======= MOBILE HERO FIX ======= */
+@media screen and (max-width: 768px) {
+  #hero {
+    height: 70vh;
+    padding: 0 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    font-size: 14px;
+    width: 200px;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 200px;
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #hero {
+    height: 65vh;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-image {
+    width: 150px;
+    right: 5%;
+  }
+}
+
 /* ABOUT SECTION */
 .about-section {
   display: flex;
@@ -364,7 +304,7 @@ header nav ul li a:hover {
   border-radius: 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  position: relative; /* for pseudo-element */
+  position: relative;
 }
 
 .about-section::before {
@@ -382,12 +322,12 @@ header nav ul li a:hover {
   max-width: 600px;
   color: #330014;
   animation: fadeInUp 1s ease forwards;
-  position: relative; /* to appear above pseudo-element */
+  position: relative;
   z-index: 1;
 }
 
 .about-content h2 {
-  font-family: 'Georgia', serif; /* fixed font declaration */
+  font-family: 'Georgia', serif;
   font-size: 42px;
   color: #6f0505;
   margin-bottom: 15px;
@@ -417,7 +357,7 @@ header nav ul li a:hover {
   flex: 1 1 300px;
   max-width: 400px;
   animation: fadeIn 1.5s ease forwards;
-  position: relative; /* to appear above pseudo-element */
+  position: relative;
   z-index: 1;
 }
 
@@ -453,11 +393,11 @@ header nav ul li a:hover {
   font-size: 18px;
 }
 
-/* GRID WITH NO GAPS (Pinterest style) */
+/* GRID WITH NO GAPS */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0px; /* no gaps */
+  gap: 0px;
   max-width: 1200px;
   margin: auto;
 }
@@ -465,7 +405,7 @@ header nav ul li a:hover {
 /* SERVICE BOXES */
 .service-box {
   background: #ffffff;
-  border-radius: 0; /* box style */
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -480,7 +420,6 @@ header nav ul li a:hover {
 .service-box:nth-child(3) { animation-delay: .3s; }
 .service-box:nth-child(4) { animation-delay: .4s; }
 .service-box:nth-child(5) { animation-delay: .5s; }
-.service-box:nth-child(6) { animation-delay: .6s; }
 
 /* PICTURE TOP */
 .service-box img {
@@ -571,54 +510,6 @@ header nav ul li a:hover {
   box-shadow: 0 12px 30px rgba(204, 0, 51, 0.5);
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-15px) scale(1.1); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    max-width: 80%;
-    margin: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-item {
-    height: 180px;
-  }
-
-  #gallery h2 {
-    font-size: 32px;
-  }
-
-  #gallery p {
-    font-size: 16px;
-  }
-}
 /* ======= BOOKING SECTION ======= */
 #booking {
   padding: 80px 20px;
@@ -682,6 +573,7 @@ header nav ul li a:hover {
   background: #330014;
   transform: scale(1.1);
 }
+
 /* ======= TESTIMONIALS SECTION ======= */
 #testimonials {
   padding: 80px 20px;
@@ -731,6 +623,7 @@ header nav ul li a:hover {
   font-weight: 600;
   color: #cc0033;
 }
+
 /* ======= CONTACT SECTION ======= */
 #contact {
   padding: 80px 20px;
@@ -774,6 +667,7 @@ header nav ul li a:hover {
   border-radius: 15px;
   overflow: hidden;
 }
+
 /* ======= FOOTER ======= */
 footer {
   background: #330014;
@@ -794,3 +688,65 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    height: 180px;
+  }
+
+  #gallery h2 {
+    font-size: 32px;
+  }
+
+  #gallery p {
+    font-size: 16px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
