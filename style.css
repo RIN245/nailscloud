@@ -127,60 +127,27 @@ header nav ul li a:hover {
     width: 45px;
   }
 }
-/* ======= MOBILE HERO FIX ======= */
-@media screen and (max-width: 768px) {
-  #hero {
-    height: 80vh;
-    padding: 0 15px;
-  }
 
-  .hero-content h1 {
-    font-size: 32px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-
-  .btn-primary, .btn-secondary {
-    padding: 12px 25px;
-    font-size: 14px;
-    width: 200px;
-    text-align: center;
-  }
-
-  /* FIX: Reposition hero image so it doesn't block buttons */
-  .hero-image {
-    position: relative;
-    width: 200px;
-    margin: 20px auto 0;
-    right: auto;
-    bottom: auto;
-    display: block;
-  }
+/* ===== HERO SECTION ===== */
+#hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 95vh;
+  padding: 0 20px;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ffe4e1, #ffd6d6, #ffe4f0);
+  overflow: hidden;
 }
 
-@media screen and (max-width: 480px) {
-  #hero {
-    height: 85vh;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .hero-image {
-    width: 150px;
-  }
-}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 255, 255, 0.2);
   z-index: 1;
   backdrop-filter: blur(2px);
@@ -304,9 +271,9 @@ header nav ul li a:hover {
     text-align: center;
   }
 
+  /* FIX: Hide hero image on mobile to prevent blocking */
   .hero-image {
-    width: 200px;
-    right: 10%;
+    display: none;
   }
 }
 
@@ -317,11 +284,6 @@ header nav ul li a:hover {
 
   .hero-content h1 {
     font-size: 28px;
-  }
-
-  .hero-image {
-    width: 150px;
-    right: 5%;
   }
 }
 
@@ -783,4 +745,3 @@ footer a:hover {
     max-width: 300px;
   }
 }
-
